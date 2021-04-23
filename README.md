@@ -1,2 +1,2 @@
 # converter-temperatur
-mengkonversikan temperatur 
+Mengkonversikan temperatur (Celcius, Farenheit & Kelvin)
