@@ -7,14 +7,31 @@
     <title>Temperature Converter</title>
 </head>
 <body>
-    <h1>Create Temperature Converter</h1>
-    <label for="inputFarenheit">Farenheit:</label>
+    <h1>Temperature Converter</h1>
+    <input id = "input" type="number" placeholder="input suhu"> 
+    <button id="btn" onclick="btnFunction()">Convert</button>
+
+    <h4>Celcius :<span id="Celcius"></span></h4>
+    <h4>Farenheit :<span id="Farenheit"></span></h4>
+    <h4>Kelvin :<span id="Kelvin"></span></h4>
+
+    <!--  <label for="inputFarenheit">Farenheit:</label>
     <input type"number" id="inputFarenheit" placeholder="input farenheit"
     oninput="temperatureConverter(this.value)">
-    <p>Celcius:<span id="outputCelcius"></span></p>
-
+    <p>Farenheit:<span id="outputCelcius"></span></p> -->
+    
     <script>
-        var f = document.getElementById("inputFarenheit").value;
+        function btnFunction(){
+            var input = document.getElementById("input").value;
+            var Celcius = input;
+            var Farenheit = (input*1.8) + 32;
+            var Kelvin = parseInt(input) + 273.15;
+
+            document.getElementById("Celcius").innerHTML += Celcius + "°C";
+            document.getElementById("Farenheit").innerHTML += Farenheit + "°F";
+            document.getElementById("Kelvin").innerHTML += Kelvin + "°K";
+
+        }
     </script>
 </body>
 </html>
