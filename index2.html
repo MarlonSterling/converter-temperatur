@@ -4,25 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Celcius Temperature Converter</h1>
-    <p>
-        <label>Input Suhu : </label>
-        <input id="inputCelsius" type="number" placeholder="Celsius"
-        oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
-    </p>
-    <p>Celcius: <span id ="outputCelcius"></span></p>
-    <p>Fahrenheit: <span id="outputFahrenheit"></span></p>
-    <p>Kelvin: <span id="outputKelvin"></span></p> 
+    <div class="celciConvert">
+        <h1>Celcius Temperature Converter</h1>
+        <p>
+            <label>Input Suhu : </label>
+            <input id="inputCelsius" type="number" placeholder="Celsius"
+            oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+        </p>
+        <p>Celcius: <span id ="outputCelcius"></span></p>
+        <p>Fahrenheit: <span id="outputFahrenheit"></span></p>
+        <p>Kelvin: <span id="outputKelvin"></span></p> 
+    </div>
+
+    <div class="farenConvert">
+        <h1>Farenheit Temperature Converter</h1>
+        <p>
+            <label>Input Suhu : </label>
+            <input id="inputFarenheit" type="number" placeholder="Farenheit"
+            oninput="temperatureConverterF(this.value)" onchange="temperatureConverterF(this.value)">
+        </p>
+        <p>Celcius: <span id ="outputCelcius2"></span></p>
+        <p>Fahrenheit: <span id="outputFahrenheit2"></span></p>
+        <p>Kelvin: <span id="outputKelvin2"></span></p> 
+    </div>
+
+    <div class="kelConvert">
+        <h1>Kelvin Temperature Converter</h1>
+        <p>
+            <label>Input Suhu : </label>
+            <input id="inputFarenheit" type="number" placeholder="Kelvin"
+            oninput="temperatureConverterK(this.value)" onchange="temperatureConverterK(this.value)">
+        </p>
+        <p>Celcius: <span id ="outputCelcius3"></span></p>
+        <p>Fahrenheit: <span id="outputFahrenheit3"></span></p>
+        <p>Kelvin: <span id="outputKelvin3"></span></p> 
+    </div>
 
     <script>
         function temperatureConverter(convert1) {
             convert1= parseFloat(convert1);
-            document.getElementById("outputCelcius").innerHTML=(convert1)
+            document.getElementById("outputCelcius").innerHTML=(convert1);
             document.getElementById("outputFahrenheit").innerHTML=(convert1*1.8)+32;
             document.getElementById("outputKelvin").innerHTML=convert1+273.15;   
+        }
+
+        function temperatureConverterF(convert2) {
+            convert2= parseFloat(convert2);
+            document.getElementById("outputCelcius2").innerHTML=(convert2-32)/1.8;
+            document.getElementById("outputFahrenheit2").innerHTML= convert2;
+            document.getElementById("outputKelvin2").innerHTML= ((convert2-32)/1.8)+273.15;   
+        }
+
+        function temperatureConverterK(convert3) {
+            convert3= parseFloat(convert3);
+            document.getElementById("outputCelcius3").innerHTML= convert3-273.15;
+            document.getElementById("outputFahrenheit3").innerHTML= ((convert3-273.15)*1.8)+32;
+            document.getElementById("outputKelvin3").innerHTML= convert3;   
         }
         
     </script>
